@@ -17,4 +17,13 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/textView"
         android:textSize="50sp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/boomerang"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
