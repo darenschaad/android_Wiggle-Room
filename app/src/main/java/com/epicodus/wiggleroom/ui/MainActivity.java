@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.epicodus.wiggleroom.R;
@@ -51,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
         public boolean onFling(MotionEvent event1, MotionEvent event2,
                                float velocityX, float velocityY) {
             Log.d(DEBUG_TAG, "onFling: " + event1.toString()+event2.toString());
+            return true;
+        }
+
+        @Override
+        public boolean onDoubleTap(MotionEvent event) {
+            Animation doubleTapAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.double_tap_animation);
+            mTextView.startAnimation(doubleTapAnimation);
             return true;
         }
     }

@@ -15,5 +15,6 @@
         android:text="Hello World!"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:textSize="50sp" />
 </RelativeLayout>
