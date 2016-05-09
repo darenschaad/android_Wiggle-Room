@@ -1,5 +1,6 @@
 package com.epicodus.wiggleroom.ui;
 
+import android.graphics.Color;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onDown(MotionEvent event) {
-            Log.d(DEBUG_TAG,"onDown: " + event.toString());
+            mTextView.setTextColor(Color.RED);
+            return true;
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent event) {
+            mTextView.setTextColor(Color.BLACK);
             return true;
         }
 
