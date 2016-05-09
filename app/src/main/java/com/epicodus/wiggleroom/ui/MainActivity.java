@@ -23,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
     GestureDetector gestureDetector;
     @Bind(R.id.textView) TextView mTextView;
     @Bind(R.id.imageView) ImageView mImageView;
+    @Bind(R.id.imageView2) ImageView mBallImageView;
     private GestureDetectorCompat mTextViewDetector;
     private GestureDetectorCompat mImageViewDetector;
+    private GestureDetectorCompat mBallImageViewDetector;
     Context mContext;
 
     private static final String DEBUG_TAG = "Gestures";
@@ -52,6 +54,22 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        mBallImageViewDetector = new GestureDetectorCompat(this, new BallImageViewGestureListener());
+        mBallImageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Animation longClickAnimation = AnimationUtils.loadAnimation(mContext, R.anim.ball_animation);
+                mBallImageView.startAnimation(longClickAnimation);
+                return false;
+
+            }
+        });
+//        mImageView.setOnTouchListener(new View.OnTouchListener() {
+//            public boolean onTouch(View v, MotionEvent event) {
+//                mBallImageViewDetector.onTouchEvent(event);
+//                return true;
+//            }
+//        });
     }
 
     class TextViewGestureListener extends GestureDetector.SimpleOnGestureListener {
@@ -98,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
             Log.d(DEBUG_TAG, "onFling: " + event1.toString()+event2.toString());
             return true;
         }
+    }
+
+    class BallImageViewGestureListener extends GestureDetector.SimpleOnGestureListener {
+
     }
 
 
