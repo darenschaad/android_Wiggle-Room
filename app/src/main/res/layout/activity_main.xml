@@ -31,10 +31,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView2"
-        android:layout_below="@+id/imageView"
+        android:src="@drawable/ball"
+        android:layout_alignTop="@+id/imageView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ball" />
+        android:layout_marginTop="33dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,7 +59,25 @@
         android:layout_height="wrap_content"
         android:text="(Click Me Long TIme!)"
         android:id="@+id/textView4"
-        android:layout_alignBottom="@+id/imageView2"
-        android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/bBallImageView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/bball" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="(Fling Me!)"
+        android:id="@+id/animationTextView"
+        android:layout_above="@+id/bBallImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"/>
 </RelativeLayout>
